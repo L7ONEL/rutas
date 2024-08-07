@@ -8,9 +8,7 @@ import './App.css';
 export default class App extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      menu: "alumnos"
-    }
+    this.state = {}
   }
 
   render(){
@@ -20,12 +18,12 @@ export default class App extends Component {
         <Switch>
           <Route path="/"><Redirect to = "/login" /></Route>
 
-          <Route path="/registro">
-            <Registro />
-          </Route>
-
           <Route path="/login">
             <Login />
+          </Route>
+
+          <Route path="/registro">
+            <Registro />
           </Route>
 
           <Route path="/alumnos">

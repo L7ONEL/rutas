@@ -11,7 +11,7 @@ export default class Boton extends Component {
     return (
         <Link to={this.props.ruta}>
 
-            <span style={{color: 'blue'}}>
+            <span>
                 {this.props.children}
             </span>
 
