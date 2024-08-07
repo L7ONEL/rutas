@@ -1,10 +1,17 @@
 import { Component } from 'react';
-import Boton from './Boton';
+import Boton from '../comun/Boton';
 
 export default class Alumnos extends Component {
     constructor(props){
         super(props);
         this.state = {}
+    }
+
+    componentDidMount(){
+      console.log({
+        id: this.props.id, 
+        curso: this.props.curso
+      })
     }
     
   render() {

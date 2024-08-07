@@ -1,7 +1,8 @@
 import { Component } from "react";
-import { Redirect, Route } from "wouter";
-import Login from "./componentes/Login";
-import Alumnos from "./componentes/Alumnos";
+import { Redirect, Route, Switch } from "wouter";
+import Login from "./login/Login";
+import Registro from "./login/Registro";
+import Alumnos from "./alumnos/Alumnos";
 import './App.css';
 
 export default class App extends Component {
@@ -16,20 +17,29 @@ export default class App extends Component {
     return(
       <>
         {/* header */}
-        <Route path="/">
-          <Redirect to = "/login" />
-          <Login 
-            cambiarMenu = {(opcion) => this.setState({menu:opcion})}
-          />
-        </Route>
-        
-        <Route path="/">
-          <Redirect to = "/alumnos" />
-          <Alumnos
-            cambiarMenu = {(opcion) => this.setState({menu:opcion})}
-          />
-        </Route>
-        {/* header */}
+        <Switch>
+          <Route path="/"><Redirect to = "/login" /></Route>
+
+          <Route path="/registro">
+            <Registro />
+          </Route>
+
+          <Route path="/login">
+            <Login />
+          </Route>
+
+          <Route path="/alumnos">
+            <Alumnos />
+          </Route>
+
+          <Route path="/alumnos/:curso/:id">
+            {(params) => <Alumnos curso={params.curso} id={params.id}/>}
+          </Route>
+
+          <Route>ERROR 404</Route>
+
+        </Switch>
+        {/* footer */}
       </>
     )
   }
