@@ -28,15 +28,11 @@ export default class App extends Component {
           </Route>
 
           <Route path="/alumnos">
-            <Alumnos id={[1, 2, 3, 4, 5]} />
+            <Alumnos nombre={["Juan", "Pablo", "Catalina", "Lucas", "Guillermina"]} />
           </Route>
 
           <Route path="/cursos">
             <Cursos curso={["7mo 2da", "7mo 7ma", "6to 5ta"]} />
-          </Route>
-
-          <Route path="/alumnos/:curso/:id">
-            {(params) => <Alumnos curso={params.curso} id={params.id}/>}
           </Route>
 
           <Route>ERROR 404</Route>

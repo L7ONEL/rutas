@@ -34,3 +34,8 @@ input{
   width: 80%;
   height: 20px;
 }
+
+table{
+  text-align: center;
+  width: 40%;
+}
