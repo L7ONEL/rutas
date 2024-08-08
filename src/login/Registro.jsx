@@ -6,6 +6,8 @@ export default class Registro extends Component {
   render() {
     return (
       <div className='Contenedor'>
+        <h2>REGISTRAR USUARIO</h2>
+
         <input type="text" placeholder='Nombre de usuario' />
         <input type="text" placeholder='Contraseña' />
         <input type="text" placeholder='Nombre' />

@@ -11,8 +11,10 @@ export default class Login extends Component {
   render() {
     return (
       <div className='Contenedor'>
+        <h2>INICIAR SESIÓN</h2>
+
         <input type="text" placeholder='Nombre de usuario' />
-        <input type="text" placeholder='Contraseña' />
+        <input type="password" placeholder='Contraseña' />
 
         <p>¿No tenés un usuario registrado? <Linea ruta = '/registro'>Registrarse</Linea></p>
         

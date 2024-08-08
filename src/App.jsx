@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from "wouter";
 import Login from "./login/Login";
 import Registro from "./login/Registro";
 import Alumnos from "./alumnos/Alumnos";
+import Cursos from "./alumnos/Cursos"
 import './App.css';
 
 export default class App extends Component {
@@ -27,7 +28,11 @@ export default class App extends Component {
           </Route>
 
           <Route path="/alumnos">
-            <Alumnos />
+            <Alumnos id={[1, 2, 3, 4, 5]} />
+          </Route>
+
+          <Route path="/cursos">
+            <Cursos curso={["7mo 2da", "7mo 7ma", "6to 5ta"]} />
           </Route>
 
           <Route path="/alumnos/:curso/:id">

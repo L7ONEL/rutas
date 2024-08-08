@@ -9,18 +9,18 @@ export default class Alumnos extends Component {
 
     componentDidMount(){
       console.log({
-        id: this.props.id, 
+        curso: this.props.curso
       })
     }
     
   render() {
     return (
       <div className='Contenedor'>
-        Componente Alumnos
+        Componente Cursos
 
         <div style={{marginTop: "20px"}}>
-          <Boton ruta = '/login'>ir a login</Boton>
-          <Boton ruta = '/cursos'>ir a cursos</Boton>
+            <Boton ruta = '/login'>ir a login</Boton>
+            <Boton ruta = '/alumnos'>ir a Alumnos</Boton>
         </div>
       </div>
     )
