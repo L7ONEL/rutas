@@ -4,23 +4,36 @@ import Boton from '../comun/Boton';
 export default class Alumnos extends Component {
     constructor(props){
         super(props);
-        this.state = {}
+        this.state = {
+          alumnos: []
+        }
     }
 
     componentDidMount(){
-      console.log({
-        id: this.props.id, 
-      })
+      this.setState({alumnos: this.props.nombre})
     }
     
   render() {
     return (
       <div className='Contenedor'>
-        Componente Alumnos
+        <h2>ALUMNOS</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nombres</th>
+            </tr>
+          </thead>
+          <tbody>
+              {this.state.alumnos.map((cont, index) => 
+                <tr>{cont}</tr>
+              )}
+          </tbody>
+        </table>
 
         <div style={{marginTop: "20px"}}>
-          <Boton ruta = '/login'>ir a login</Boton>
-          <Boton ruta = '/cursos'>ir a cursos</Boton>
+          <Boton ruta = '/login'>Iniciar sesión con otra cuenta</Boton>
+          <Boton ruta = '/cursos'>Ir a cursos</Boton>
         </div>
       </div>
     )
