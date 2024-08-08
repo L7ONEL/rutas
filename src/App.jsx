@@ -1,35 +1,48 @@
 import { Component } from "react";
-import { Redirect, Route } from "wouter";
-import Login from "./componentes/Login";
-import Alumnos from "./componentes/Alumnos";
+import { Redirect, Route, Switch } from "wouter";
+import Login from "./login/Login";
+import Registro from "./login/Registro";
+import Alumnos from "./alumnos/Alumnos";
+import Cursos from "./alumnos/Cursos"
 import './App.css';
 
 export default class App extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      menu: "alumnos"
-    }
+    this.state = {}
   }
 
   render(){
     return(
       <>
         {/* header */}
-        <Route path="/">
-          <Redirect to = "/login" />
-          <Login 
-            cambiarMenu = {(opcion) => this.setState({menu:opcion})}
-          />
-        </Route>
-        
-        <Route path="/">
-          <Redirect to = "/alumnos" />
-          <Alumnos
-            cambiarMenu = {(opcion) => this.setState({menu:opcion})}
-          />
-        </Route>
-        {/* header */}
+        <Switch>
+          <Route path="/"><Redirect to = "/login" /></Route>
+
+          <Route path="/login">
+            <Login />
+          </Route>
+
+          <Route path="/registro">
+            <Registro />
+          </Route>
+
+          <Route path="/alumnos">
+            <Alumnos id={[1, 2, 3, 4, 5]} />
+          </Route>
+
+          <Route path="/cursos">
+            <Cursos curso={["7mo 2da", "7mo 7ma", "6to 5ta"]} />
+          </Route>
+
+          <Route path="/alumnos/:curso/:id">
+            {(params) => <Alumnos curso={params.curso} id={params.id}/>}
+          </Route>
+
+          <Route>ERROR 404</Route>
+
+        </Switch>
+        {/* footer */}
       </>
     )
   }
