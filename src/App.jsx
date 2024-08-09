@@ -35,6 +35,10 @@ export default class App extends Component {
             <Cursos curso={["7mo 2da", "7mo 7ma", "6to 5ta"]} />
           </Route>
 
+          {/* <Route path="/alumnos/:curso/:id">
+            {(params) => <Alumnos curso={params.curso} id={params.id}/>}
+          </Route> */}
+
           <Route>ERROR 404</Route>
 
         </Switch>
